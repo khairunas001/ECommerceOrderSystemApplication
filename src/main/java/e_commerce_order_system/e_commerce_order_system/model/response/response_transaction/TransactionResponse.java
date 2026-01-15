@@ -1,4 +1,4 @@
-package e_commerce_order_system.e_commerce_order_system.model.request;
+package e_commerce_order_system.e_commerce_order_system.model.response.response_transaction;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -9,5 +9,5 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @Data
 @Builder
-public class CreateOrderRequest {
+public class CreateTransactionResponse {
 }
