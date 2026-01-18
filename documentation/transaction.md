@@ -1,16 +1,15 @@
-## PRODUCT API Documentation
+## TRANSACTION API Documentation
 
-### 1. Create Product❌ ✅
+### 1. Create Transaction❌ ✅
 
-**`POST /e-commerce/products`**
+**`POST /e-commerce/transactions`**
 
 📥 Request Body:
 
 ```json
 {
-  "name": "parfum",
-  "price": 200000,
-  "stock": 5
+  "product_id": "parfum",
+  "quantity": 2
 }
 ```
 
@@ -20,90 +19,79 @@
 {
   "status": "201 CREATED",
   "data": {
-    "id": "ea4d9742-d072-410f-a60e-34b6cbab4c71",
-    "name": "parfum",
-    "price": 200000,
-    "stock": 5
+    "product_id": "parfum",
+    "quantity": 2
   }
 }
 
 ```
 
-### 2. Gel All Product❌ ✅
+### 2. Gel All Transaction❌ ✅
 
-**`GET /e-commerce/products`**
+**`GET /e-commerce/transactions`**
 
 📄 Response (200 OK):
 
 ```json
 {
-  "status": "200 CREATED",
+  "status": "200 OK",
   "data": [
     {
-      "id": "ea4d9742-d072-410f-a60e-34b6cbab4c71",
-      "name": "parfum",
-      "price": 200000,
-      "stock": 5
+      "id": "0d55004c-0e75-41e1-9771-782272daa73c",
+      "product": {
+        "id": "e6f59424-7a94-4f62-aa8c-c3fa3bc69ec0",
+        "name": "Kain",
+        "price": 200000,
+        "stock": 71
+      },
+      "quantity": 5,
+      "createdAt": "2026-01-16T15:48:07"
     },
     {
-      "id": "ea4d9742-d072-410f-a60e-34basdas6cbab4c71",
-      "name": "susu",
-      "price": 230000,
-      "stock": 2
+      "id": "b924d9e1-c8f4-4028-b08f-50559528153f",
+      "product": {
+        "id": "e6f59424-7a94-4f62-aa8c-c3fa3bc69ec0",
+        "name": "Kain",
+        "price": 200000,
+        "stock": 71
+      },
+      "quantity": 12,
+      "createdAt": "2026-01-16T16:49:48"
     },
     {
-      "id": "ea4d9742-d072-4asdas10f-a60e-34basdas6cbab4c71",
-      "name": "ayam",
-      "price": 20000,
-      "stock": 3
+      "id": "df4d6c70-b110-48e6-8cc7-24220b8dbf80",
+      "product": {
+        "id": "e6f59424-7a94-4f62-aa8c-c3fa3bc69ec0",
+        "name": "Kain",
+        "price": 200000,
+        "stock": 71
+      },
+      "quantity": 12,
+      "createdAt": "2026-01-16T16:51:31"
     }
   ]
 }
 ```
 
-### 3. Get Product❌ ✅
+### 3. Get Transaction❌ ✅
 
-**`GET /e-commerce/products/{product_id}`**
+**`GET /e-commerce/transactions/{transaction_id}`**
 
 📄 Response (200 OK):
 
 ```json
 {
-  "status": "200 CREATED",
+  "status": "200 OK",
   "data": {
-    "id": "ea4d9742-d072-410f-a60e-34b6cbab4c71",
-    "name": "parfum",
-    "price": 200000,
-    "stock": 5
+    "id": "b924d9e1-c8f4-4028-b08f-50559528153f",
+    "product": {
+      "id": "e6f59424-7a94-4f62-aa8c-c3fa3bc69ec0",
+      "name": "Kain",
+      "price": 200000,
+      "stock": 71
+    },
+    "quantity": 12,
+    "createdAt": "2026-01-16T16:49:48"
   }
 }
-```
-
-### 4. Update Product❌ ✅
-
-**`PATCH /e-commerce/products/{product_id}`**
-
-📥 Request Body:
-
-```json
- {
-  "name": "susu",
-  "price": 230000,
-  "stock": 2
-}
-```
-
-📄 Response (201 Created):
-
-```json
-{
-  "status": "201 OK",
-  "data": {
-    "id": "ea4d9742-d072-410f-a60e-34basdas6cbab4c71",
-    "name": "susu",
-    "price": 230000,
-    "stock": 2
-  }
-}
-
 ```

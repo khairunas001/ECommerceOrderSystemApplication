@@ -31,3 +31,12 @@ build/
 
 ### VS Code ###
 .vscode/
+
+# Ignore MySQL temp and socket files
+db-data/
+db-data/database-mysql/mysql.sock
+db-data/database-mysql/ib_buffer_pool
+db-data/database-mysql/binlog.index
+db-data/database-mysql/auto.cnf
+
+

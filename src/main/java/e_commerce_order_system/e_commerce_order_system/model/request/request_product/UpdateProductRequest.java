@@ -1,24 +1,22 @@
 package e_commerce_order_system.e_commerce_order_system.model.request.request_product;
 
-import jakarta.persistence.Column;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;
-import lombok.*;
+import lombok.AllArgsConstructor;
+import lombok.Builder;
+import lombok.Data;
+import lombok.NoArgsConstructor;
 
 @AllArgsConstructor
 @NoArgsConstructor
 @Data
 @Builder
-public class CreateProductRequest {
+public class UpdateProductRequest {
 
-    @NotBlank
     private String name;
 
-    @NotNull
     private Long price;
 
-    @NotNull
     private Integer stock;
-
 
 }
