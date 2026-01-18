@@ -34,6 +34,7 @@ services:
       interval: 5s
       timeout: 5s
       retries: 10
+      start_period: 40s # TAMBAHKAN INI: Beri waktu 40 detik untuk inisialisasi awal
 
   rabbitmq:
     image: rabbitmq:3-management
