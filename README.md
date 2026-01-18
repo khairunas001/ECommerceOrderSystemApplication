@@ -11,15 +11,9 @@ Full documentation for the project can be found in:
 
 This project uses **Docker** and **Docker Compose** for easy setup.
 
-To run the application and all required services, simply run:
+### 🏠 Build JAR Locally (Before Docker)
 
-```bash
-docker-compose up --build
-```
-
-### 🏠 Build JAR Locally (Without Docker)
-
-If you want to build and run the application locally without using Docker, follow these steps:
+Before running the application with Docker, you can build the JAR locally:
 
 1. Make sure you are in the root folder of the project (where `pom.xml` is located).
 
@@ -35,10 +29,14 @@ If you want to build and run the application locally without using Docker, follo
 mvn clean package -DskipTests
 ```
 
-4. After building, the JAR file will be available in the `target/` directory. You can run it with:
+4. After building, the JAR file will be available in the `target/` directory.
 
-```powershell
-java -jar target/<your-jar-file>.jar
+### 🐳 Run with Docker Compose
+
+Once the JAR is built, you can start the application and all required services with:
+
+```bash
+docker-compose up --build
 ```
 
 
