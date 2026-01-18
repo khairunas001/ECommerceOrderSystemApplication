@@ -4,8 +4,8 @@
 
 Full documentation for the project can be found in:
 
-* [Product Documentation](docs/documentation/product.md)
-* [Transaction Documentation](docs/documentation/transaction.md)
+* [Product Documentation](documentation/product.md)
+* [Transaction Documentation](documentation/transaction.md)
 
 ## ⚙️ Setup Instructions
 
