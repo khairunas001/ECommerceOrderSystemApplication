@@ -11,6 +11,9 @@ Full documentation for the project can be found in:
 
 This project uses **Docker** and **Docker Compose** for easy setup.
 
+> **Note:** Make sure you are running commands from the root folder of the project:  
+> `/ECommerceOrderSystemApplication`
+
 ### 🏠 Build JAR Locally (Before Docker)
 
 Before running the application with Docker, you can build the JAR locally:
