@@ -61,6 +61,60 @@ To ensure stock consistency when multiple users perform transactions simultaneou
 
 This ensures atomic updates and prevents overselling.
 
+## 🔌 Accessing Services
+
+After running `docker-compose up --build`, you can access the services as follows:
+
+### 🐬 MySQL
+
+- **Host:** `localhost`
+- **Port:** `3306`
+- **Database:** `e_commerce_order_system`
+- **Username:** `ecommerce`
+- **Password:** `ecommerce123`
+
+You can connect using the MySQL client:
+
+```bash
+mysql -h 127.0.0.1 -P 3306 -u ecommerce -pecommerce123 e_commerce_order_system
+```
+
+Or using any database GUI tool (e.g., DBeaver, MySQL Workbench) with the above credentials.
+
+---
+
+### 🐇 RabbitMQ
+
+- **Host:** `localhost`
+- **Port (AMQP):** `5672`
+- **Port (Management UI):** `15672`
+- **Username:** `guest`
+- **Password:** `guest`
+
+You can access the RabbitMQ Management UI in your browser:
+
+```
+http://localhost:15672
+```
+
+Use the credentials above to login.
+
+---
+
+### 🟢 Redis
+
+- **Host:** `localhost`
+- **Port:** `6379`
+
+You can connect using the Redis CLI:
+
+```bash
+redis-cli -h 127.0.0.1 -p 6379
+```
+
+Or use any Redis GUI tool (e.g., RedisInsight) with the above host and port.
+
+
 ## 🛠️ Tech Stack
 
 * **Java 25** (Amazon Corretto)
