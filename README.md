@@ -17,6 +17,31 @@ To run the application and all required services, simply run:
 docker-compose up --build
 ```
 
+### 🏠 Build JAR Locally (Without Docker)
+
+If you want to build and run the application locally without using Docker, follow these steps:
+
+1. Make sure you are in the root folder of the project (where `pom.xml` is located).
+
+2. Using the bundled Maven wrapper:
+
+```powershell
+./mvnw clean package -DskipTests
+```
+
+3. Or if you have Maven installed on Windows:
+
+```powershell
+mvn clean package -DskipTests
+```
+
+4. After building, the JAR file will be available in the `target/` directory. You can run it with:
+
+```powershell
+java -jar target/<your-jar-file>.jar
+```
+
+
 This will start the following services:
 
 * Spring Boot application
