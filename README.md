@@ -31,7 +31,7 @@ Make sure to configure environment variables as needed (MySQL credentials, Redis
 ## 📚 API Documentation
 
 Refer to the Swagger UI or Postman collection for API details:
-[Link to Swagger / Postman Collection]
+[Link to Swagger / Postman Collection](https://documenter.getpostman.com/view/31399628/2sBXVifpYN)
 
 ## 🔒 Race Condition Handling
 
