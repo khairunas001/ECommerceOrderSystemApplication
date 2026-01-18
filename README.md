@@ -64,6 +64,7 @@ To ensure stock consistency when multiple users perform transactions simultaneou
 
 This ensures atomic updates and prevents overselling.
 
+
 ## 🔌 Accessing Services
 
 After running `docker-compose up --build`, you can access the services as follows:
@@ -84,6 +85,14 @@ mysql -h 127.0.0.1 -P 3306 -u ecommerce -pecommerce123 e_commerce_order_system
 
 Or using any database GUI tool (e.g., DBeaver, MySQL Workbench) with the above credentials.
 
+You can also check directly inside the MySQL Docker container:
+
+```bash
+docker exec -it ecommerce-mysql mysql -u ecommerce -pecommerce123 e_commerce_order_system
+```
+
+From here, you can run SQL queries to verify data has been stored correctly.
+
 ---
 
 ### 🐇 RabbitMQ
@@ -102,6 +111,16 @@ http://localhost:15672
 
 Use the credentials above to login.
 
+If the background worker is running, you should see messages like:
+
+```
+📥 Transaction received: a241075b-d542-4416-aa24-d9a155ce8b51
+⚙️ Transaction processed: a241075b-d542-4416-aa24-d9a155ce8b51
+✅ Transaction success:  a241075b-d542-4416-aa24-d9a155ce8b51
+```
+
+These logs indicate that transactions are being processed successfully.
+
 ---
 
 ### 🟢 Redis
@@ -117,6 +136,30 @@ redis-cli -h 127.0.0.1 -p 6379
 
 Or use any Redis GUI tool (e.g., RedisInsight) with the above host and port.
 
+When queries hit the cache successfully, you will see logs like:
+
+```
+🔥 CACHE HIT products:all
+```
+
+To check directly inside the Redis Docker container:
+
+```bash
+docker exec -it ecommerce-redis redis-cli
+```
+
+Then you can run Redis commands, for example:
+
+```redis
+KEYS *
+GET products:all
+```
+
+This allows you to verify that data is stored in Redis.
+
+---
+
+✅ All services (MySQL, RabbitMQ, Redis) should now be running and accessible, and you can verify that transactions are processed and cached correctly.
 
 ## 🛠️ Tech Stack
 
