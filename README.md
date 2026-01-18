@@ -24,10 +24,6 @@ This will start the following services:
 * Redis (caching & atomic counter)
 * RabbitMQ (message broker)
 
-### Environment Variables
-
-Make sure to configure environment variables as needed (MySQL credentials, Redis config, RabbitMQ URL) in the `docker-compose.yml` or `.env` file.
-
 ## 📚 API Documentation
 
 Refer to the Swagger UI or Postman collection for API details:
